@@ -8,3 +8,7 @@ export interface HeadingProps {
   title?: boolean;
   subTitle?: boolean;
 }
+
+export interface CategoryProps {
+  highlited: boolean;
+}

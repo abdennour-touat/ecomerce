@@ -1,13 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components/native";
-import { HeadingProps } from "../../../../typing";
-import COLORS from "../../../consts/colors";
-
-export const SafeAreaContainer = styled.SafeAreaView`
-  flex: 1;
-  padding: 0px 20px;
-  background-color: ${COLORS.white};
-`;
+import { HeadingProps } from "../../typing";
+import COLORS from "../consts/colors";
 
 export const Header = styled.View`
   margin-top: 20px;
@@ -44,4 +38,15 @@ export const Input = styled.TextInput`
   font-size: 18px;
   flex: 1;
   color: ${COLORS.dark};
+`;
+
+export const PressButton = styled.TouchableOpacity`
+  margin-left: 10px;
+  height: 50px;
+  width: 50px;
+
+  background-color: ${COLORS.green};
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 `;
