@@ -3,7 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { RootStackParamList } from "./typing";
 import { NavigationContainer } from "@react-navigation/native";
-import HomeScreen from "./src/view/pages/HomeScreen";
+import HomeScreen from "./src/view/pages/HomeScreen/HomeScreen";
 import DetailsScreen from "./src/view/pages/DetailsScreen";
 import COLORS from "./src/consts/colors";
 
