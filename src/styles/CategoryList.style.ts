@@ -13,6 +13,7 @@ export const CategoryContainer: FC = styled.View`
 export const CategoryText: FC<CategoryProps> = styled.Text`
   color: gray;
   font-weight: bold;
+  padding: 12px;
   ${({ highlited }: CategoryProps) => {
     switch (true) {
       case highlited:

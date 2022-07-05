@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
+
 import { CategoryContainer, CategoryText } from "../styles/CategoryList.style";
 
 export default function CategoryList() {
@@ -9,9 +10,15 @@ export default function CategoryList() {
     <CategoryContainer>
       {/* <Text>hello</Text> */}
       {categories.map((category, index) => (
-        <CategoryText highlited={categoryIndex == index} key={index}>
-          {category}
-        </CategoryText>
+        <TouchableOpacity
+          key={index}
+          onPress={() => setCategoryIndex(index)}
+          activeOpacity={0.8}
+        >
+          <CategoryText highlited={categoryIndex == index} key={index}>
+            {category}
+          </CategoryText>
+        </TouchableOpacity>
       ))}
     </CategoryContainer>
   );

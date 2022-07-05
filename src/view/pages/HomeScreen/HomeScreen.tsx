@@ -1,9 +1,11 @@
-import { View } from "react-native";
+import { FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
+import Card from "../../../components/Card";
 import CategoryList from "../../../components/CategoryList";
 import COLORS from "../../../consts/colors";
+import plants from "../../../consts/plants";
 import {
   Header,
   Heading,
@@ -37,6 +39,17 @@ const HomeScreen = () => {
         </PressButton>
       </Container>
       <CategoryList />
+      <FlatList
+        columnWrapperStyle={{ justifyContent: "space-between" }}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          marginTop: 10,
+          marginBottom: 50,
+        }}
+        numColumns={2}
+        data={plants}
+        renderItem={({ item }) => <Card card={item} />}
+      />
     </SafeAreaView>
   );
 };
