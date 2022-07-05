@@ -2,10 +2,11 @@ import { FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
-import Card from "../../../components/Card";
-import CategoryList from "../../../components/CategoryList";
-import COLORS from "../../../consts/colors";
-import plants from "../../../consts/plants";
+import { NavigationProps } from "../../../typing";
+import Card from "../../components/Card";
+import CategoryList from "../../components/CategoryList";
+import COLORS from "../../consts/colors";
+import plants from "../../consts/plants";
 import {
   Header,
   Heading,
@@ -13,9 +14,9 @@ import {
   SearchContainer,
   Input,
   PressButton,
-} from "../../../styles/HomScreen.style";
+} from "../../styles/HomScreen.style";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }: NavigationProps) => {
   return (
     <SafeAreaView
       style={{ flex: 1, paddingHorizontal: 20, backgroundColor: COLORS.white }}
@@ -23,8 +24,12 @@ const HomeScreen = () => {
       {/* header */}
       <Header>
         <View>
-          <Heading subTitle>Welcome to </Heading>
-          <Heading title>Plant shop</Heading>
+          <Heading weight={"bold"} subTitle>
+            Welcome to{" "}
+          </Heading>
+          <Heading weight={"bold"} mainTitle>
+            Plant shop
+          </Heading>
         </View>
         <Icon name="shopping-cart" size={28} />
       </Header>
@@ -34,7 +39,7 @@ const HomeScreen = () => {
           <Icon name="search" size={25} style={{ marginHorizontal: 10 }} />
           <Input placeholder="Search" />
         </SearchContainer>
-        <PressButton>
+        <PressButton size={50} color={COLORS.green}>
           <Icon name="sort" color={"#fff"} size={30} />
         </PressButton>
       </Container>
@@ -48,7 +53,7 @@ const HomeScreen = () => {
         }}
         numColumns={2}
         data={plants}
-        renderItem={({ item }) => <Card card={item} />}
+        renderItem={({ item }) => <Card navigation={navigation} card={item} />}
       />
     </SafeAreaView>
   );

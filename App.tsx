@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
 import { RootStackParamList } from "./typing";
 import { NavigationContainer } from "@react-navigation/native";
-import HomeScreen from "./src/view/pages/HomeScreen/HomeScreen";
+import HomeScreen from "./src/view/pages/HomeScreen";
 import DetailsScreen from "./src/view/pages/DetailsScreen";
 import COLORS from "./src/consts/colors";
 import { SafeAreaProvider } from "react-native-safe-area-context";
